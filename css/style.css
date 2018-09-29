@@ -1,0 +1,240 @@
+.menu{
+	background:#696969;
+	margin-bottom: 30px;
+}
+.main-menu{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	text-align:left;
+}
+.main-menu>li{
+	display: inline-block;
+	margin: 0px -2px;
+}
+
+.main-menu>li:hover{
+	background: #A73232;
+}
+.main-menu>li>a{
+	display: block;
+	color: #fff;
+	padding: 8px 45px;
+	text-decoration: none;
+	border-left: #454545 solid 1px;
+}
+.main-menu>li:last-child>a{
+	border-right: #454545 solid 1px;
+}
+.main-menu>li .sub-1{
+	display: none;
+	padding-left: 0px;
+	margin: 0px 0px;
+	
+}
+.main-menu>li:hover .sub-1{
+	display: block;
+	list-style: none;
+	position: absolute;
+	z-index:9999;
+}
+.sub-1 li{
+	margin-top: -3px;
+    padding: 8px 0px 8px 0px;
+    border-top: 0px;
+}
+.sub-1>li>a{
+	text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: #8F0D0D;
+    border: #454545 solid 1px;
+    padding: 8px 34px;
+}
+.sub-1 li a:hover{
+	background: #A73232;
+}
+
+.sub-1 .hov2:hover .sub-sub{
+	top:32px;
+}
+
+.sub-1 .hov3:hover .sub-sub{
+	top:66px;
+}
+
+
+
+
+
+.sub-1>li .sub-sub{
+	display: none;
+	padding-left: 0px;
+    margin: 0px 0px;
+	
+}
+.sub-1>li:hover .sub-sub{
+	display: block;
+    list-style: none;
+    position: absolute;
+    right: -165px;
+    top: 0px;
+    z-index: 9999;
+}
+.sub-sub li{
+	margin-top: -3px;
+    padding: 8px 0px 8px 0px;
+    border-top: 0px;
+}
+.sub-sub>li>a{
+	text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: #DB5C5C;
+    border: #454545 solid 1px;
+    padding: 8px 34px;
+}
+.sub-sub li:hover{
+	background: #A73232;
+}
+
+
+
+
+
+.column{
+	height: 300px;
+	background: rgba(0,0,0,0.5);
+	display: inline-table;
+}
+.column h1{
+	color: #ffffff;
+	font-family: monospace;
+	font-size: 45px;
+	text-align: center;
+	text-transform: uppercase;
+	white-space: pre;
+}
+.checkbox-container,
+.checkbox-container-second{
+	background: #ffffff;
+	width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+	min-height: 200px;
+	margin-bottom: 40px;
+	padding-top: 35px;
+    padding-left: 135px;
+	padding-right: 50px;
+}
+.checkbox-container div,
+.checkbox-container-second div{
+	display: flex;
+    margin: 20px 0px;
+}
+.checkbox-container div label,
+.checkbox-container-second div label{
+	margin: 2px 5px;
+}
+/* облагородил стандартный чекбокс.
+   Стили для IE8 и более старых версий не поддерживают 
+   современную стилизацию */
+.checkbox,
+.checkbox-second{
+  vertical-align: top;
+  margin: 0 3px 0 0;
+  width: 17px;
+  height: 17px;
+}
+/* Для всех остальных браузеров*/
+.checkbox-container div .checkbox + label, 
+.checkbox-container-second div .checkbox-second + label{
+  cursor: pointer;
+}
+/* Прячу оригинальный чекбокс с помощью псевдоселектора :not(checked) */
+.checkbox-container div .checkbox:not(checked),
+.checkbox-container-second div .checkbox-second:not(checked){
+  position: absolute;
+  opacity: 0;
+}
+.checkbox-container div .checkbox:not(checked) + label, 
+.checkbox-container-second div .checkbox-second:not(checked) + label{
+  position: relative; /* будем позиционировать псевдочекбокс относительно label */
+  padding: 0 0 0 60px; /* оставляем слева от label место под псевдочекбокс */
+}
+/* Оформление первой части чекбокса в выключенном состоянии (фон) с помощью псевдоселектора :before */
+.checkbox:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 50px;
+  height: 26px;
+  border-radius: 13px;
+  background: #CDD1DA;
+  box-shadow: inset 0 4px 7px rgba(0,0,0,.2);
+}
+/* Оформление второй части чекбокса в выключенном состоянии (переключатель) с помощью псевдоселектора :after */
+.checkbox:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+  transition: all 1s; /* анимация, чтобы чекбокс переключался плавно */
+}
+/* Меняем фон чекбокса, когда он включен. */
+.checkbox:checked + label:before {
+  background: #9FD468;
+}
+/* Сдвигаем переключатель чекбокса, когда он включен. */
+.checkbox:checked + label:after {
+  left: 26px;
+}
+/* Показываем получение фокуса. */
+.checkbox:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(255,255,0,.5);
+}
+.checkbox:hover + label:before {
+  box-shadow: 0 0 0 3px rgba(255,255,0,.5);
+}
+
+
+
+
+/* Оформление первой части чекбокса-2 в выключенном состоянии (фон) с помощью псевдоселектора :before */
+.checkbox-second:not(checked) + label:before {
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 32px;
+	height: 32px;
+	background: url(../images/checkbox/OFF-second.png);
+}
+/* Меняем фон чекбокса-2, когда он включен. */
+.checkbox-second:checked + label:before {
+	background: url(../images/checkbox/ON-second.png);
+}
+/* Показываем получение фокуса. */
+.checkbox-second:focus + label:before {
+	box-shadow: inset 0 0 0 5px rgba(0,0,0,0.1);
+	border-radius: 9px;
+	transition: all 1s;
+}
+.checkbox-second:hover + label:before {
+	box-shadow: inset 0 0 0 5px rgba(0,0,0,0.1);
+	border-radius: 9px;
+}
+#owl-demo .item{
+	margin: 3px;
+}
+#owl-demo .item img{
+	display: block;
+	width: 100%;
+	max-height: 191px !important;
+}
